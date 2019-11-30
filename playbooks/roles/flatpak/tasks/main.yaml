@@ -1,0 +1,15 @@
+---
+- name: Install
+  apt:
+    name: flatpak
+    state: latest
+    update_cache: yes
+
+- name: Install Software Flatpak plugin
+  apt:
+    name: gnome-software-plugin-flatpak
+    state: latest
+    update_cache: yes
+
+- name: Add the Flathub repository
+  command: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo

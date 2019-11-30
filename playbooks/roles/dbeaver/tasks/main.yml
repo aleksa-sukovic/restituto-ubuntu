@@ -1,0 +1,21 @@
+---
+- name: Install
+  flatpak:
+    name: io.dbeaver.DBeaverCommunity
+    state: present
+
+- name: Copy desktop file
+  copy:
+    src: desktop/dbeaver.desktop
+    dest: "/home/{{ username }}/.local/share/applications/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ username }}"
+
+- name: Copy dock item
+  template:
+    src: dock/dbeaver.dockitem
+    dest: "/home/{{ username }}/.config/plank/dock1/launchers/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ username }}"

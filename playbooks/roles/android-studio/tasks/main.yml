@@ -1,0 +1,14 @@
+---
+- name: Install
+  snap:
+    name: android-studio
+    classic: yes
+    state: present
+
+- name: Copy config to import manually
+  copy:
+    src: config/android-studio-config.zip
+    dest: "/home/{{ username }}/.config/jetbrains-zip-config/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"

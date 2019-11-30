@@ -1,0 +1,16 @@
+---
+- name: Install
+  apt:
+    name: git
+    state: latest
+    update_cache: yes
+
+- name: Configure username
+  become: true
+  become_user: "{{ username }}"
+  command: "git config --global user.name \"{{ git_username }}\""
+
+- name: Configure email
+  become: true
+  become_user: "{{ username }}"
+  command: "git config --global user.email \"{{ git_email }}\""

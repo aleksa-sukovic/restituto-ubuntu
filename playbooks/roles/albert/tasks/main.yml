@@ -1,0 +1,44 @@
+---
+- name: Install
+  script:
+    cmd: ../files/scripts/albert-install.sh
+  become: true
+  become_user: root
+
+- name: Copy desktop file
+  template:
+    src: desktop/albert.desktop
+    dest: "/home/{{ username }}/.local/share/applications/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Copy dock item
+  template:
+    src: dock/albert.dockitem
+    dest: "/home/{{ username }}/.config/plank/dock1/launchers/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Copy icon
+  copy:
+    src: icons/albert.png
+    dest: "/home/{{ username }}/Documents/Dock/Icons/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Copy config
+  copy:
+    src: config/albert.conf
+    dest: "/home/{{ username }}/.config/albert/"
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Add to autostart
+  template:
+    src: desktop/albert.desktop
+    dest: "/home/{{ username}}/.config/autostart/"
+    owner: "{{ username }}"
+    group: "{{ group }}"

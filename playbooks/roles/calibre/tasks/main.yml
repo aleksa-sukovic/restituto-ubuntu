@@ -1,0 +1,6 @@
+---
+- name: Install
+  apt:
+    name: calibre
+    state: latest
+    update_cache: yes

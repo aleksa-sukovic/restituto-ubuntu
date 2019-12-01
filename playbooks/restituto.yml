@@ -34,6 +34,8 @@
         - purge
         - default-apps
         - git
+        - nfs
+        - node
         - flatpak
         - albert
         - android-studio
@@ -43,16 +45,12 @@
         - dbeaver
         - file-zilla
         - docker
-        - dotfiles
         - draw-io
         - fira-code
         - git-kraken
-        - gnome
         - google-chrome
         - gravit-designer
         - intellij-community
-        - nfs
-        - node
         - insync
         - php-storm
         - postman
@@ -69,4 +67,6 @@
         - visual-studio-code
         - vlc
         - vysor
+        - dotfiles
+        - gnome
         - plank

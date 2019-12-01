@@ -4,3 +4,12 @@
     name: calibre
     state: latest
     update_cache: yes
+
+
+- name: Copy dock item
+  template:
+    src: dock/calibre.dockitem
+    dest: "/home/{{ username }}/.config/plank/dock1/launchers/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ username }}"

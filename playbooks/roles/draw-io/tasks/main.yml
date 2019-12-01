@@ -1,0 +1,13 @@
+---
+- name: Install
+  snap:
+    name: drawio
+    state: present
+
+- name: Copy dock item
+  template:
+    src: dock/draw-io.dockitem
+    dest: "/home/{{ username }}/.config/plank/dock1/launchers/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ username }}"

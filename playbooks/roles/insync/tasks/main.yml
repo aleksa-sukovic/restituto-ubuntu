@@ -1,0 +1,16 @@
+---
+- name: Add GPG apt Key
+  apt_key:
+    keyserver: keyserver.ubuntu.com 
+    id: ACCAF35C
+    state: present
+
+- name: Add Insync repository
+  copy:
+    src: repositories/insync.list
+    dest: /etc/apt/sources.list.d/insync.list
+
+- name: Install
+  apt:
+    name: insync
+    update_cache: yes

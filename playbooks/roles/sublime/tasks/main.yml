@@ -1,0 +1,22 @@
+---
+- name: Install
+  snap:
+    name: sublime-text
+    classic: yes
+    state: present
+
+- name: Copy dock item
+  template:
+    src: dock/sublime.dockitem
+    dest: "/home/{{ username }}/.config/plank/dock1/launchers/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Initialize desktop file
+  copy:
+    src: desktop/sublime.desktop
+    dest: "/home/{{ username }}/.local/share/applications/sublime-text_subl.desktop"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"    

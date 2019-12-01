@@ -7,6 +7,10 @@
         git_username: aleksa
         git_email: sukovic.aleksa@gmail.com
         calibre_library: /home/aleksa/pCloudDrive/Documents/Library
+        nvm_version: "v0.35.1"
+        nvm_node_version: "10.17.0"
+        nvm_working_path: "/home/{{ username }}"
+        nvm_dest: "{{ nvm_working_path }}/.nvm"
         plank_theme: mac-round
         gnome_theme: mojave-light
         gnome_icons_theme: mojave-icons
@@ -16,17 +20,15 @@
           - 15    # alternate-tab
           - 779   # clipboard
           - 16    # auto-move windows
-          - 1465  # desktop icons
           - 2     # frippery move clock
           - 1319  # gs connect
-          - 615   # KStatus Notifier Item
-          - 18    # native window placement
+          - 615   # kstatus notifier item
           - 750   # open weather
-          - 708   # panel OSD
-          - 8     # places status indicator
+          - 708   # panel osd
           - 7     # removable drive menu
           - 19    # user themes
           - 21    # workspace indicator
+          - 1037  # custom corner
       roles:
         # - ping
         # - purge
@@ -39,3 +41,31 @@
         # - blender
         # - calibre
         # - dbeaver
+        # - file-zilla
+        # - docker
+        # - dotfiles
+        # - draw-io
+        # - fira-code
+        # - git-kraken
+        # - gnome
+        # - google-chrome
+        # - gravit-designer
+        # - intellij-community
+        # - nfs
+        # - node
+        # - insync
+        # - php-storm
+        # - postman
+        # - qbittorrent
+        # - slack
+        # - snap-store
+        # - spotify
+        # - sublime
+        # - telegram
+        # - todoist
+        # - virtual-box
+        # - vagrant
+        # - viber
+        # - visual-studio-code
+        # - vlc
+        - plank

@@ -1,4 +1,16 @@
 ---
+- name: Install default packages
+  apt:
+    pkg:
+      - curl
+      - apt-transport-https
+      - ca-certificates
+      - software-properties-common
+      - vim
+      - curl
+      - libssl-dev
+      - build-essential
+
 - name: Default desktop files
   template:
     src: "{{ item }}"

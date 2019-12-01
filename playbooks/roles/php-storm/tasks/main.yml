@@ -1,0 +1,38 @@
+---
+- name: Install
+  snap:
+    name: phpstorm
+    classic: yes
+    state: present
+
+- name: Copy config to import manually
+  copy:
+    src: config/php-storm-config.zip
+    dest: "/home/{{ username }}/.config/jetbrains-zip-config/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Copy icon
+  copy:
+    src: icons/php-storm.png
+    dest: "/home/{{ username }}/Documents/Dock/Icons/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Copy desktop file
+  template:
+    src: desktop/php-storm.desktop
+    dest: "/home/{{ username }}/.local/share/applications/phpstorm_phpstorm.desktop"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Copy dock item
+  template:
+    src: dock/php-storm.dockitem
+    dest: "/home/{{ username }}/.config/plank/dock1/launchers/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ username }}"

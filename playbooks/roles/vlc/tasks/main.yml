@@ -1,0 +1,23 @@
+---
+- name: Install VLC Player
+  snap:
+    name: vlc
+    state: present
+
+- name: Create VLC Player config directory
+  file:
+    path: "/home/{{ username }}/.config/vlc"
+    state: directory
+    owner: "{{ username }}"
+    group: "{{ group }}"
+    mode: 0755
+
+- name: Configure VLC Player
+  copy:
+    src: vlc-config
+    dest: "/home/{{ username }}/.config/vlc/vlcrc"
+
+- name: Initialize desktop file
+  copy:
+    src: /var/lib/snapd/desktop/applications/vlc_vlc.desktop
+    dest: "/home/{{ username }}/.local/share/applications"

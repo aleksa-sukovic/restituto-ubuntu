@@ -1,0 +1,5 @@
+---
+- name: Install
+  snap:
+    name: snap-store
+    state: present

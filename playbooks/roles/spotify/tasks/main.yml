@@ -1,0 +1,18 @@
+---
+- name: Install
+  snap:
+    name: spotify
+    state: present
+
+- name: Copy dock item
+  template:
+    src: dock/spotify.dockitem
+    dest: "/home/{{ username }}/.config/plank/dock1/launchers/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Initialize desktop file
+  copy:
+    src: /var/lib/snapd/desktop/applications/spotify_spotify.desktop
+    dest: "/home/{{ username }}/.local/share/applications"

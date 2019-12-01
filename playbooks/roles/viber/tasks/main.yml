@@ -1,0 +1,31 @@
+---
+- name: Download installation
+  get_url:
+    url: https://download.cdn.viber.com/cdn/desktop/Linux/viber.deb
+    dest: "/home/{{ username }}/Downloads/viber.deb"
+    mode: '0777'
+
+- name: Install
+  apt:
+    deb: "/home/{{ username }}/Downloads/viber.deb"
+
+- name: Copy desktop file
+  copy:
+    src: desktop/viber.desktop
+    dest: "/home/{{ username }}/.local/share/applications/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Copy dock item
+  template:
+    src: dock/viber.dockitem
+    dest: "/home/{{ username }}/.config/plank/dock1/launchers/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Clean
+  file:
+    path: "/home/{{ username }}/Downloads/viber.deb"
+    state: absent

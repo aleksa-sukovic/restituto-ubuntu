@@ -1,0 +1,7 @@
+---
+- include: nvm.yml
+
+- include: node.yml
+
+# needed in order to preserve idempotency due to globally installed packages
+- include: permission.yml

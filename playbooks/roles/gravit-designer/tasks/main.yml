@@ -1,0 +1,20 @@
+---
+- name: Install
+  snap:
+    name: gravit-designer
+
+- name: Copy desktop file
+  copy:
+    src: desktop/gravit-designer.desktop
+    dest: "/home/{{ username }}/.local/share/applications/gravit-designer_gravit-designer.desktop"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Copy dock item
+  template:
+    src: dock/gravit-designer.dockitem
+    dest: "/home/{{ username }}/.config/plank/dock1/launchers/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"

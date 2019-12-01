@@ -1,0 +1,8 @@
+[Desktop Entry]
+X-SnapInstanceName=todoist-thibaut
+Type=Application
+Name=Todoist
+Icon=/home/{{ username }}/Documents/Dock/Icons/todoist.png
+Categories=Productivity;
+Exec=env BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/todoist-thibaut_todoist.desktop /snap/bin/todoist-thibaut.todoist
+Terminal=false

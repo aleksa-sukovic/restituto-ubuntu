@@ -1,0 +1,29 @@
+---
+- name: Install
+  snap:
+    name: gitkraken
+    state: present
+
+- name: Copy icon
+  copy:
+    src: icons/git-kraken.png
+    dest: "/home/{{ username }}/Documents/Dock/Icons/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Copy desktop file
+  template:
+    src: desktop/git-kraken.desktop
+    dest: "/home/{{ username }}/.local/share/applications/gitkraken_gitkraken.desktop"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Copy dock item
+  template:
+    src: dock/git-kraken.dockitem
+    dest: "/home/{{ username }}/.config/plank/dock1/launchers/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ username }}"

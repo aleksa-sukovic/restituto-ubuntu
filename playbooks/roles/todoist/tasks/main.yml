@@ -1,0 +1,29 @@
+---
+- name: Install
+  snap:
+    name: todoist-thibaut
+    state: present
+
+- name: Copy desktop file
+  template:
+    src: desktop/todoist.desktop
+    dest: "/home/{{ username }}/.local/share/applications/todoist-thibaut_todoist.desktop"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Copy dock item
+  template:
+    src: dock/todoist.dockitem
+    dest: "/home/{{ username }}/.config/plank/dock1/launchers/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Copy icon
+  copy:
+    src: icons/todoist.png
+    dest: "/home/{{ username }}/Documents/Dock/Icons/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"

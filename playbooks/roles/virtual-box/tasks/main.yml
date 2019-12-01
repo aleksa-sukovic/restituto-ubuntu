@@ -1,0 +1,6 @@
+---
+ - name: Install
+   apt:
+     name: virtualbox
+     state: latest
+     update_cache: yes

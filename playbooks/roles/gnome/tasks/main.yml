@@ -71,6 +71,9 @@
     - themes/mojave-light-solid-alt.tar.xz
     - themes/mojave-light-solid.tar.xz
     - themes/mojave-light.tar.xz
+    - themes/arc.tar.xz
+    - themes/arc-dark.tar.xz
+    - themes/arc-darker.tar.xz
 
 - name: Extract icons
   unarchive:

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Station
+Comment=A single place for all of your applications.
+Exec=/home/{{ username }}/Applications/Station.AppImage %F
+Type=Application
+Icon=/home/{{ username }}/Documents/Dock/Icons/station.png
+Categories=Utility;
+MimeType=application/x-iso9660-appimage;

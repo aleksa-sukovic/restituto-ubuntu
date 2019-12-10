@@ -18,3 +18,27 @@
   file:
     dest: "/home/{{ username }}/Applications/Station.AppImage"
     mode: a+x
+
+- name: Copy icon
+  copy:
+    src: icons/station.png
+    dest: "/home/{{ username }}/Documents/Dock/Icons/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Copy desktop file
+  template:
+    src: desktop/station.desktop
+    dest: "/home/{{ username }}/.local/share/applications/station.desktop"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Copy dock item
+  template:
+    src: dock/station.dockitem
+    dest: "/home/{{ username }}/.config/plank/dock1/launchers/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ username }}"

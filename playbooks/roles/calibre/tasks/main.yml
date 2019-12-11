@@ -5,6 +5,13 @@
     state: latest
     update_cache: yes
 
+- name: Copy desktop file
+  template:
+    src: desktop/calibre.desktop
+    dest: "/home/{{ username }}/.local/share/applications/calibre-gui.desktop"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
 
 - name: Copy dock item
   template:
@@ -13,3 +20,11 @@
     mode: 0755
     owner: "{{ username }}"
     group: "{{ username }}"
+
+- name: Copy icon
+  copy:
+    src: icons/calibre.png
+    dest: "/home/{{ username }}/Documents/Dock/Icons/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"

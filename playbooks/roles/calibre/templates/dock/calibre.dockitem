@@ -1,2 +1,2 @@
 [PlankDockItemPreferences]
-Launcher=file:///usr/share/applications/calibre-gui.desktop
+Launcher=file:///home/{{ username }}/.local/share/applications/calibre-gui.desktop

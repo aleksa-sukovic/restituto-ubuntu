@@ -12,3 +12,19 @@
     mode: 0755
     owner: "{{ username }}"
     group: "{{ group }}"
+
+- name: Copy desktop file
+  template:
+    src: desktop/android-studio.desktop
+    dest: "/home/{{ username }}/.local/share/applications/android-studio_android-studio.desktop"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Copy dock item
+  template:
+    src: dock/android-studio.dockitem
+    dest: "/home/{{ username }}/.config/plank/dock1/launchers/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ username }}"

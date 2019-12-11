@@ -1,2 +1,2 @@
 [PlankDockItemPreferences]
-Launcher=file:///home/{{ username }}/.local/share/applications/android-studio.desktop
+Launcher=file:///home/{{ username }}/.local/share/applications/android-studio_android-studio.desktop

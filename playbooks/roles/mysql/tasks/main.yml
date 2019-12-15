@@ -1,0 +1,30 @@
+---
+- shell: hostname
+  register: current_hostname
+
+- name: Add PGP key for MySQL
+  apt_key:
+    keyserver: "{{ mysql_key_server }}"
+    id: "{{ mysql_key_id }}"
+
+- name: Add ppa Repository for MySQL
+  apt_repository:
+    repo: "{{ mysql_ppa }}"
+    state: present
+
+- name: Update apt
+  apt: update_cache=yes
+
+- name: mysql | Install MySQL Packages
+  apt:
+    pkg: "{{ mysql_packages }}"
+    state: latest
+  when: mysql_packages is defined
+
+- name: mysql | Update root password for all root accounts
+  mysql_user: name=root host={{ item }} check_implicit_admin=yes password={{ mysql_root_password }} login_user=root login_password={{ mysql_root_password }}
+  with_items:
+    - "{{ current_hostname.stdout | lower }}"
+    - 127.0.0.1
+    - ::1
+    - localhost

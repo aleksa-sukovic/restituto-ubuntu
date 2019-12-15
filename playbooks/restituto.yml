@@ -2,16 +2,39 @@
     - hosts: all
       become: true
       vars:
+        # System
         username: aleksa
         group: aleksa
+
+        # Git
         git_username: aleksa
         git_email: sukovic.aleksa@gmail.com
+
+        # Calibre
         calibre_library: /home/aleksa/pCloudDrive/Documents/Library
+
+        # Node
         nvm_version: "v0.35.1"
         nvm_node_version: "10.17.0"
         nvm_working_path: "/home/{{ username }}"
         nvm_dest: "{{ nvm_working_path }}/.nvm"
+
+        # Plank
         plank_theme: mac-round
+
+        # MySql
+        mysql_ppa: "deb http://repo.mysql.com/apt/debian/ jessie mysql-5.7"
+        mysql_key_server: "pgpkeys.mit.edu"
+        mysql_key_id: "8C718D3B5072E1F5"
+        mysql_version: "5.7"
+        mysql_root_password: 'root'
+        mysql_packages: [
+          mysql-server,
+          mysql-client,
+          python-mysqldb
+        ]
+
+        # Gnome
         gnome_theme: mojave-light
         gnome_icons_theme: mojave-icons
         gnome_wallpaper: mojave-light.jpg
@@ -30,45 +53,46 @@
           - 21    # workspace indicator
           - 1037  # custom corner
       roles:
-        - ping
-        - purge
-        - default-apps
-        - git
-        - nfs
-        - node
-        - flatpak
-        - albert
-        - android-studio
-        - bitwarden
-        - station
-        - blender
-        - calibre
-        - dbeaver
-        - file-zilla
-        - station
-        - docker
-        - draw-io
-        - fira-code
-        - git-kraken
-        - google-chrome
-        - gravit-designer
-        - intellij-community
-        - insync
-        - php-storm
-        - postman
-        - qbittorrent
-        - slack
-        - snap-store
-        - spotify
-        - sublime
-        - telegram
-        - todoist
-        - virtual-box
-        - vagrant
-        - viber
-        - visual-studio-code
-        - vlc
-        - vysor
-        - dotfiles
-        - plank
-        - gnome
+        # - ping
+        # - purge
+        # - default-apps
+        # - git
+        # - nfs
+        # - node
+        # - flatpak
+        # - albert
+        # - android-studio
+        # - bitwarden
+        # - station
+        # - blender
+        # - calibre
+        # - dbeaver
+        # - file-zilla
+        # - station
+        # - docker
+        # - draw-io
+        # - fira-code
+        # - git-kraken
+        # - google-chrome
+        # - gravit-designer
+        # - intellij-community
+        # - insync
+        # - php-storm
+        # - postman
+        # - qbittorrent
+        # - slack
+        # - snap-store
+        # - spotify
+        # - sublime
+        # - telegram
+        # - todoist
+        # - virtual-box
+        # - vagrant
+        # - viber
+        # - visual-studio-code
+        # - vlc
+        # - vysor
+        # - mysql
+        # - dotfiles
+        # - plank
+        # - gnome

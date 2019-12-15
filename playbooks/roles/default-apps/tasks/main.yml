@@ -42,3 +42,11 @@
     owner: "{{ username }}"
     group: "{{ group }}"
     mode: 0755
+
+- name: Create default cloud folder
+  file:
+    path: "/home/{{ username }}/Cloud"
+    state: directory
+    owner: "{{ username }}"
+    group: "{{ group }}"
+    mode: 0755

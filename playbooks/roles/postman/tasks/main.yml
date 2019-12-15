@@ -16,3 +16,9 @@
   copy:
     src: /var/lib/snapd/desktop/applications/postman_postman.desktop
     dest: "/home/{{ username }}/.local/share/applications"
+
+- name: Add description to desktop file
+  lineinfile:
+    path: "/home/{{ username }}/.local/share/applications/postman_postman.desktop"
+    line: "Comment=Simplify workflows and create better APIs."
+    create: yes

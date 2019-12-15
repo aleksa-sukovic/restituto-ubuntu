@@ -16,3 +16,9 @@
   copy:
     src: /var/lib/snapd/desktop/applications/spotify_spotify.desktop
     dest: "/home/{{ username }}/.local/share/applications"
+
+- name: Add description to desktop file
+  lineinfile:
+    path: "/home/{{ username }}/.local/share/applications/spotify_spotify.desktop"
+    line: "Comment=Digital music service that gives you access to millions of songs."
+    create: yes

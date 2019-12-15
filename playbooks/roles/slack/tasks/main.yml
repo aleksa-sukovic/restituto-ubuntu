@@ -17,3 +17,14 @@
     mode: 0755
     owner: "{{ username }}"
     group: "{{ group }}"
+
+- name: Initialize desktop file
+  copy:
+    src: /var/lib/snapd/desktop/applications/slack_slack.desktop
+    dest: "/home/{{ username }}/.local/share/applications"
+
+- name: Add description to desktop file
+  replace:
+    path: "/home/{{ username }}/.local/share/applications/slack_slack.desktop"
+    regexp: '^Comment=.*'
+    replace: "Comment=Slack is where work flows."

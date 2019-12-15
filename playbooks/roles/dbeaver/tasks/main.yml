@@ -7,7 +7,7 @@
 - name: Copy desktop file
   copy:
     src: desktop/dbeaver.desktop
-    dest: "/home/{{ username }}/.local/share/applications/"
+    dest: "/home/{{ username }}/.local/share/applications/io.dbeaver.DBeaverCommunity.desktop"
     mode: 0755
     owner: "{{ username }}"
     group: "{{ username }}"

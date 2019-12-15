@@ -53,46 +53,46 @@
           - 21    # workspace indicator
           - 1037  # custom corner
       roles:
-        # - ping
-        # - purge
-        # - default-apps
-        # - git
-        # - nfs
-        # - node
-        # - flatpak
-        # - albert
-        # - android-studio
-        # - bitwarden
-        # - station
-        # - blender
-        # - calibre
-        # - dbeaver
-        # - file-zilla
-        # - station
-        # - docker
-        # - draw-io
-        # - fira-code
-        # - git-kraken
-        # - google-chrome
-        # - gravit-designer
-        # - intellij-community
-        # - insync
-        # - php-storm
-        # - postman
-        # - qbittorrent
-        # - slack
-        # - snap-store
-        # - spotify
-        # - sublime
-        # - telegram
-        # - todoist
-        # - virtual-box
-        # - vagrant
-        # - viber
-        # - visual-studio-code
-        # - vlc
-        # - vysor
-        # - mysql
-        # - dotfiles
-        # - plank
-        # - gnome
+        - ping
+        - purge
+        - default-apps
+        - git
+        - nfs
+        - node
+        - flatpak
+        - mysql
+        - albert
+        - android-studio
+        - bitwarden
+        - station
+        - blender
+        - calibre
+        - dbeaver
+        - file-zilla
+        - station
+        - docker
+        - draw-io
+        - fira-code
+        - git-kraken
+        - google-chrome
+        - gravit-designer
+        - intellij-community
+        - insync
+        - php-storm
+        - postman
+        - qbittorrent
+        - slack
+        - snap-store
+        - spotify
+        - sublime
+        - telegram
+        - todoist
+        - virtual-box
+        - vagrant
+        - viber
+        - visual-studio-code
+        - vlc
+        - vysor
+        - dotfiles
+        - plank
+        - gnome

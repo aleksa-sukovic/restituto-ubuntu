@@ -1,0 +1,23 @@
+---
+- name: Remove interrupts on startup
+  cron:
+    special_time: reboot
+    state: present
+    job: "echo \"disable\" > /sys/firmware/acpi/interrupts/{{ item }}"
+  with_items:
+    - gpe16
+    - sci
+  become: true
+  become_user: root
+
+- name: Make removal work after wakeup from suspend
+  template:
+    src: wakeup.sh
+    dest: "/lib/systemd/system-sleep/{{ item }}"
+    mode: 0755
+    owner: root
+    group: root
+  with_items:
+    - 10_disable_gpe16
+    - 10_disable_sci
+

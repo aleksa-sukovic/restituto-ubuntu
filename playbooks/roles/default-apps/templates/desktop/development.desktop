@@ -4,3 +4,4 @@ Exec=nautilus ./Development
 Icon=/home/{{ username }}/Documents/Dock/Icons/development.png
 Terminal=false
 Type=Application
+Comment=Your development folder.

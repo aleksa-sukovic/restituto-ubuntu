@@ -4,3 +4,4 @@ Exec=nautilus ./Desktop
 Icon=/home/{{ username }}/Documents/Dock/Icons/desktop.png
 Terminal=false
 Type=Application
+Comment=Your desktop.

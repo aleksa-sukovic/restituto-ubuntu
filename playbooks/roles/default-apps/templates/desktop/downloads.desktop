@@ -4,3 +4,4 @@ Exec=nautilus ./Downloads
 Icon=/home/{{ username }}/Documents/Dock/Icons/downloads.png
 Terminal=false
 Type=Application
+Comment=Your downloads.

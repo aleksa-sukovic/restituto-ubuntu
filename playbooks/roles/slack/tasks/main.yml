@@ -1,13 +1,11 @@
 ---
 - name: Install
-  snap:
-    name: slack
-    classic: yes
-    state: present
+  apt:
+    deb: https://downloads.slack-edge.com/linux_releases/slack-desktop-4.2.0-amd64.deb
 
 - name: Initialize desktop file
   copy:
-    src: /var/lib/snapd/desktop/applications/slack_slack.desktop
+    src: /usr/share/applications/slack.desktop
     dest: "/home/{{ username }}/.local/share/applications"
 
 - name: Copy dock item
@@ -18,13 +16,8 @@
     owner: "{{ username }}"
     group: "{{ group }}"
 
-- name: Initialize desktop file
-  copy:
-    src: /var/lib/snapd/desktop/applications/slack_slack.desktop
-    dest: "/home/{{ username }}/.local/share/applications"
-
 - name: Add description to desktop file
   replace:
-    path: "/home/{{ username }}/.local/share/applications/slack_slack.desktop"
+    path: "/home/{{ username }}/.local/share/applications/slack.desktop"
     regexp: '^Comment=.*'
     replace: "Comment=Slack is where work flows."

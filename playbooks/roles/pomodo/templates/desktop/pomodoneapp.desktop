@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=PomoDoneApp
+Comment=Pomodoro timer for your favourite productivity tool
+Exec="/opt/PomoDoneApp/pomodoneapp" %U
+Terminal=false
+Type=Application
+Icon=/home/{{ username }}/Documents/Dock/Icons/pomodo.png
+Categories=Utility;

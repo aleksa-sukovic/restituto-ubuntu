@@ -1,0 +1,20 @@
+---
+- name: Install
+  apt:
+    deb: https://app.pomodoneapp.com/installers/PomoDoneApp_1.5.1545_amd64.deb?_ga=2.206894293.799549272.1578227652-460052921.1578227652
+
+- name: Copy desktop file
+  template:
+    src: desktop/pomodoneapp.desktop
+    dest: "/home/{{ username }}/.local/share/applications/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ username }}"
+
+- name: Copy icon
+  copy:
+    src: icons/pomodo.png
+    dest: "/home/{{ username }}/Documents/Dock/Icons/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"

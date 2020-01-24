@@ -1,0 +1,6 @@
+---
+- name: Download
+  get_url:
+    url: "https://github.com/FiloSottile/mkcert/releases/download/v1.4.1/mkcert-v1.4.1-linux-amd64"
+    dest: "/usr/local/bin/mkcert"
+    mode: 0755

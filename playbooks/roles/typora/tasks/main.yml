@@ -1,0 +1,38 @@
+---
+- name: Add an Apt signing key
+  apt_key:
+    url: https://typora.io/linux/public-key.asc
+    state: present
+
+- apt_repository:
+    repo: 'deb https://typora.io/linux ./'
+    state: present
+
+- name: Install
+  apt:
+    name: typora
+    state: latest
+
+- name: Copy desktop file
+  copy:
+    src: desktop/typora.desktop
+    dest: "/home/{{ username }}/.local/share/applications/typora.desktop"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Copy dock item
+  template:
+    src: dock/typora.dockitem
+    dest: "/home/{{ username }}/.config/plank/dock1/launchers/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Copy configuration
+  copy:
+    src: config/typora.conf
+    dest: "/home/{{ username }}/.config/Typora/conf/conf.user.json"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"

@@ -4,8 +4,9 @@
     url: https://typora.io/linux/public-key.asc
     state: present
 
-- apt_repository:
-    repo: 'deb https://typora.io/linux ./'
+- name: Add repository
+  apt_repository:
+    repo: deb https://typora.io/linux ./
     state: present
 
 - name: Install
@@ -25,6 +26,14 @@
   template:
     src: dock/typora.dockitem
     dest: "/home/{{ username }}/.config/plank/dock1/launchers/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Make configuration directory
+  file:
+    path: "/home/{{ username }}/.config/Typora/conf/"
+    state: directory
     mode: 0755
     owner: "{{ username }}"
     group: "{{ group }}"

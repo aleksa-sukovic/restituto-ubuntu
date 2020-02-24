@@ -1,0 +1,33 @@
+---
+- name: Install ZSH
+  apt:
+    name: zsh
+    state: latest
+
+- name: Set as default
+  user:
+    name: "{{ username }}"
+    shell: /usr/bin/zsh
+
+- name: Install Powerline fonts
+  apt:
+    name: fonts-powerline
+    state: latest
+
+- name: Download Oh My ZSH
+  get_url:
+    url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+    dest: "/home/{{ username }}/install.sh"
+    mode: 0755
+
+- name: Install Oh My ZSH
+  shell:
+    cmd: "/home/{{ username }}/install.sh --unattended"
+
+- name: Copy ZSH config
+  template:
+    src: config/zsh.conf
+    dest: "/home/{{ username }}/.zshrc"
+    mode: 0644
+    owner: "{{ username }}"
+    group: "{{ group }}"

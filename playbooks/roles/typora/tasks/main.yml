@@ -29,6 +29,14 @@
     owner: "{{ username }}"
     group: "{{ group }}"
 
+- name: Make configuration directory
+  file:
+    path: "/home/{{ username }}/.config/Typora/conf/"
+    state: directory
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
 - name: Copy configuration
   copy:
     src: config/typora.conf

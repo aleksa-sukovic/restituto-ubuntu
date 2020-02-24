@@ -4,14 +4,14 @@
     url: https://typora.io/linux/public-key.asc
     state: present
 
-- apt_repository:
-    repo: 'deb https://typora.io/linux ./'
-    state: present
+- name: Add Apt repository
+  command: add-apt-repository 'deb https://typora.io/linux ./'
 
 - name: Install
   apt:
     name: typora
     state: latest
+    update_cache: yes
 
 - name: Copy desktop file
   copy:

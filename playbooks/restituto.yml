@@ -52,6 +52,9 @@
           - 19    # user themes
           - 21    # workspace indicator
           - 1037  # custom corner
+          - 1401  # Bluetooth
+          - 28    # GTile
+          - 906   # Sound Input/Output chooser
       roles:
         - ping
         - purge

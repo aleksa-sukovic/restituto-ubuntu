@@ -1,6 +1,0 @@
----
-- name: Install
-  apt:
-    name: filezilla
-    state: latest
-    update_cache: yes

@@ -6,5 +6,5 @@ Terminal=false
 Type=Application
 Icon=/home/{{ username }}/Documents/Dock/Icons/bitwarden.png
 StartupWMClass=Bitwarden
-Comment=A secure and free password manager for all of your devices.
+Comment=A secure and free password manager for all of your devices
 Categories=Utility;

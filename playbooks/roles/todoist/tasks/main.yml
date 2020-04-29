@@ -1,13 +1,12 @@
 ---
 - name: Install
-  snap:
-    name: todoist-thibaut
-    state: present
+  apt:
+    dep: https://github.com/KryDos/todoist-linux/releases/download/1.21/Todoist_1.21.0_amd64.deb
 
 - name: Copy desktop file
   template:
     src: desktop/todoist.desktop
-    dest: "/home/{{ username }}/.local/share/applications/todoist-thibaut_todoist.desktop"
+    dest: "/home/{{ username }}/.local/share/applications/todoist.desktop"
     mode: 0755
     owner: "{{ username }}"
     group: "{{ group }}"

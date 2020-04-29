@@ -13,10 +13,18 @@
     owner: "{{ username }}"
     group: "{{ group }}"
 
-- name: Initialize desktop file
+- name: Copy icon
   copy:
+    src: icons/sublime.png
+    dest: "/home/{{ username }}/Documents/Dock/Icons/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Initialize desktop file
+  template:
     src: desktop/sublime.desktop
     dest: "/home/{{ username }}/.local/share/applications/sublime-text_subl.desktop"
     mode: 0755
     owner: "{{ username }}"
-    group: "{{ group }}"    
+    group: "{{ group }}"

@@ -1,2 +1,2 @@
 [PlankDockItemPreferences]
-Launcher=file:////home/{{ username }}/.local/share/applications/todoist-thibaut_todoist.desktop
+Launcher=file:////home/{{ username }}/.local/share/applications/todoist.desktop

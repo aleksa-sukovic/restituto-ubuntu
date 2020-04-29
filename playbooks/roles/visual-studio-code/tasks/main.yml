@@ -13,24 +13,18 @@
     owner: "{{ username }}"
     group: "{{ group }}"
 
-- name: Initialize desktop file
-  copy:
-    src: /var/lib/snapd/desktop/applications/code_code.desktop
+- name: Copy desktop file
+  template:
+    src: desktop/visual-studio-code.desktop
     dest: "/home/{{ username }}/.local/share/applications/code_code.desktop"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
 
 - name: Copy icon
   copy:
     src: icons/code.png
     dest: "/home/{{ username }}/Documents/Dock/Icons/"
-    mode: 0755
-    owner: "{{ username }}"
-    group: "{{ group }}"
-
-- name: Add custom icon
-  replace:
-    path: "/home/{{ username }}/.local/share/applications/code_code.desktop"
-    regexp: '^(Icon=.*)'
-    replace: "Icon=/home/{{ username }}/Documents/Dock/Icons/code.png"
     mode: 0755
     owner: "{{ username }}"
     group: "{{ group }}"

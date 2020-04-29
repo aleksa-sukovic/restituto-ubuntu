@@ -14,10 +14,21 @@
 
 - name: Configure VLC Player
   copy:
-    src: vlc-config
+    src: config/vlc.config
     dest: "/home/{{ username }}/.config/vlc/vlcrc"
 
-- name: Initialize desktop file
+- name: Copy icon
   copy:
-    src: /var/lib/snapd/desktop/applications/vlc_vlc.desktop
-    dest: "/home/{{ username }}/.local/share/applications"
+    src: icons/vlc.png
+    dest: "/home/{{ username }}/Documents/Dock/Icons/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Initialize desktop file
+  template:
+    src: desktop/vlc.desktop
+    dest: "/home/{{ username }}/.local/share/applications/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"

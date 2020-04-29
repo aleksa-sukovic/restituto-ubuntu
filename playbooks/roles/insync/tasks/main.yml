@@ -1,7 +1,7 @@
 ---
 - name: Add GPG apt Key
   apt_key:
-    keyserver: keyserver.ubuntu.com 
+    keyserver: keyserver.ubuntu.com
     id: ACCAF35C
     state: present
 
@@ -14,3 +14,19 @@
   apt:
     name: insync
     update_cache: yes
+
+- name: Copy desktop file
+  template:
+    src: desktop/insync.desktop
+    dest: "/home/{{ username }}/.local/share/applications/insync.desktop"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Copy icon
+  copy:
+    src: icons/insync.png
+    dest: "/home/{{ username }}/Documents/Dock/Icons/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"

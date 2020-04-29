@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Insync
+GenericName=Insync
+Comment=Launch Insync
+Icon=/home/{{ username }}/Documents/Dock/Icons
+Categories=Network;
+Exec=insync start
+TryExec=insync
+Terminal=false

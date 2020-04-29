@@ -36,3 +36,8 @@
     mode: 0644
     owner: "{{ username }}"
     group: "{{ group }}"
+
+- name: Clean up
+  file:
+    path: "/home/{{ username }}/install.sh --unattended"
+    state: absent

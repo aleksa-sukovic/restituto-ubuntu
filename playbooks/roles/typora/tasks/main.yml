@@ -4,8 +4,12 @@
     url: https://typora.io/linux/public-key.asc
     state: present
 
-- name: Add Apt repository
-  command: add-apt-repository 'deb https://typora.io/linux ./'
+- name: Add Typora repository
+  apt_repository:
+    repo: deb https://typora.io/linux ./
+
+# - name: Add Apt repository
+#   command: add-apt-repository 'deb https://typora.io/linux ./'
 
 - name: Install
   apt:
@@ -13,8 +17,16 @@
     state: latest
     update_cache: yes
 
-- name: Copy desktop file
+- name: Copy icon
   copy:
+    src: icons/typora.png
+    dest: "/home/{{ username }}/Documents/Dock/Icons/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Copy desktop file
+  template:
     src: desktop/typora.desktop
     dest: "/home/{{ username }}/.local/share/applications/typora.desktop"
     mode: 0755
@@ -29,13 +41,16 @@
     owner: "{{ username }}"
     group: "{{ group }}"
 
-- name: Make configuration directory
+- name: Make directories
   file:
-    path: "/home/{{ username }}/.config/Typora/conf/"
+    path: "{{ item }}"
     state: directory
     mode: 0755
     owner: "{{ username }}"
     group: "{{ group }}"
+  with_items:
+    - "/home/{{ username }}/.config/Typora/conf/"
+    - "/home/{{ username }}/.config/Typora/themes/"
 
 - name: Copy configuration
   copy:
@@ -44,3 +59,13 @@
     mode: 0755
     owner: "{{ username }}"
     group: "{{ group }}"
+
+- name: Extract themes
+  unarchive:
+    src: "{{ item }}"
+    dest: "/home/{{ username }}/.config/Typora/themes"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+  with_items:
+    - config/themes.zip

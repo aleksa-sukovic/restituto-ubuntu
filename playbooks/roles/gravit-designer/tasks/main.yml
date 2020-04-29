@@ -3,8 +3,16 @@
   snap:
     name: gravit-designer
 
-- name: Copy desktop file
+- name: Copy icon
   copy:
+    src: icons/gravit-designer.png
+    dest: "/home/{{ username }}/Documents/Dock/Icons/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Copy desktop file
+  template:
     src: desktop/gravit-designer.desktop
     dest: "/home/{{ username }}/.local/share/applications/gravit-designer_gravit-designer.desktop"
     mode: 0755

@@ -21,6 +21,14 @@
     owner: "{{ username }}"
     group: "{{ group }}"
 
+- name: Copy icon
+  copy:
+    src: icons/android-studio.png
+    dest: "/home/{{ username }}/Documents/Dock/Icons/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
 - name: Copy dock item
   template:
     src: dock/android-studio.dockitem

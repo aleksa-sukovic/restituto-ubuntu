@@ -1,2 +1,2 @@
 [PlankDockItemPreferences]
-Launcher=file:///home/{{ username }}/.local/share/applications/bitwarden.desktop
+Launcher=file:///home/{{ username }}/.local/share/applications/bitwarden_bitwarden.desktop

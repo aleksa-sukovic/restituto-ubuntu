@@ -1,2 +1,2 @@
 [PlankDockItemPreferences]
-Launcher=file:////home/{{ username }}/.local/share/applications/telegram-desktop_telegramdesktop.desktop
+Launcher=file:////home/{{ username }}/.local/share/applications/telegram-desktop_telegram-desktop.desktop

@@ -1,0 +1,13 @@
+[Desktop Entry]
+X-SnapInstanceName=telegram-desktop
+Version=1.0
+Name=Telegram Desktop
+Comment=Telegram is a cloud-based instant messaging and voice over IP service
+Exec=env BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/telegram-desktop_telegram-desktop.desktop /snap/bin/telegram-desktop -- %u
+Icon=/home/{{ username }}/Documents/Dock/Icons/telegram.png
+Terminal=false
+StartupWMClass=TelegramDesktop
+Type=Application
+Categories=Chat;Network;InstantMessaging;Qt;
+MimeType=x-scheme-handler/tg;
+Keywords=tg;chat;im;messaging;messenger;sms;tdesktop;

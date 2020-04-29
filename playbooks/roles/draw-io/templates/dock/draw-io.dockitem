@@ -1,2 +1,2 @@
 [PlankDockItemPreferences]
-Launcher=file:////var/lib/snapd/desktop/applications/drawio_drawio.desktop
+Launcher=file:////home/{{ username }}/.local/share/applications/drawio_drawio.desktop

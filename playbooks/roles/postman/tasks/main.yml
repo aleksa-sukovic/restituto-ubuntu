@@ -12,13 +12,18 @@
     owner: "{{ username }}"
     group: "{{ group }}"
 
-- name: Initialize desktop file
+- name: Copy icon
   copy:
-    src: /var/lib/snapd/desktop/applications/postman_postman.desktop
-    dest: "/home/{{ username }}/.local/share/applications"
+    src: icons/postman.png
+    dest: "/home/{{ username }}/Documents/Dock/Icons/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
 
-- name: Add description to desktop file
-  lineinfile:
-    path: "/home/{{ username }}/.local/share/applications/postman_postman.desktop"
-    line: "Comment=Simplify workflows and create better APIs."
-    create: yes
+- name: Initialize desktop file
+  template:
+    src: desktop/postman.desktop
+    dest: "/home/{{ username }}/.local/share/applications/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"

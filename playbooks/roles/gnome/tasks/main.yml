@@ -62,18 +62,7 @@
     mode: 0755
     owner: "{{ username }}"
     group: "{{ group }}"
-  with_items:
-    - themes/mojave-dark-alt.tar.xz
-    - themes/mojave-dark-solid-alt.tar.xz
-    - themes/mojave-dark-solid.tar.xz
-    - themes/mojave-dark.tar.xz
-    - themes/mojave-light-alt.tar.xz
-    - themes/mojave-light-solid-alt.tar.xz
-    - themes/mojave-light-solid.tar.xz
-    - themes/mojave-light.tar.xz
-    - themes/arc.tar.xz
-    - themes/arc-dark.tar.xz
-    - themes/arc-darker.tar.xz
+  with_items: "{{ gnome_available_themes }}"
 
 - name: Extract icons
   unarchive:

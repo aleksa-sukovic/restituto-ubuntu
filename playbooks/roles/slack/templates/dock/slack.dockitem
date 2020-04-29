@@ -1,2 +1,2 @@
 [PlankDockItemPreferences]
-Launcher=file:////home/{{ username }}/.local/share/applications/slack_slack.desktop
+Launcher=file:////home/{{ username }}/.local/share/applications/slack.desktop

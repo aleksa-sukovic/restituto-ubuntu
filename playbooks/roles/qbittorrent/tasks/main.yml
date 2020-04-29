@@ -11,7 +11,7 @@
     update_cache: yes
 
 - name: Copy desktop file
-  copy:
+  template:
     src: desktop/qbittorrent.desktop
     dest: "/home/{{ username }}/.local/share/applications/org.qbittorrent.qBittorrent.desktop"
     mode: 0755
@@ -34,6 +34,14 @@
   copy:
     src: config/qbittorrent-config.conf
     dest: "/home/{{ username }}/.config/qBittorrent/qBittorrent.conf"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Copy icon
+  copy:
+    src: icons/qbittorrent.png
+    dest: "/home/{{ username }}/Documents/Dock/Icons/"
     mode: 0755
     owner: "{{ username }}"
     group: "{{ group }}"

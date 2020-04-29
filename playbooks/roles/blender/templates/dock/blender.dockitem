@@ -1,2 +1,2 @@
 [PlankDockItemPreferences]
-Launcher=file:///home/{{ username }}/.local/share/applications/blender.desktop
+Launcher=file:///home/{{ username }}/.local/share/applications/blender_blender.desktop

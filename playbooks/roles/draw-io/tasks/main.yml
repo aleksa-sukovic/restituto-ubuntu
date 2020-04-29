@@ -12,13 +12,18 @@
     owner: "{{ username }}"
     group: "{{ username }}"
 
-- name: Initialize desktop file
+- name: Copy icon
   copy:
-    src: /var/lib/snapd/desktop/applications/drawio_drawio.desktop
-    dest: "/home/{{ username }}/.local/share/applications"
+    src: icons/draw-io.png
+    dest: "/home/{{ username }}/Documents/Dock/Icons/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
 
-- name: Add description to desktop file
-  replace:
-    path: "/home/{{ username }}/.local/share/applications/drawio_drawio.desktop"
-    regexp: '^Comment=.*'
-    replace: "Comment=Diagram software for making flowcharts, process diagrams, ER and network diagrams."
+- name: Copy desktop file
+  template:
+    src: desktop/draw-io.desktop
+    dest: "/home/{{ username }}/.local/share/applications/drawio_drawio.desktop"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"

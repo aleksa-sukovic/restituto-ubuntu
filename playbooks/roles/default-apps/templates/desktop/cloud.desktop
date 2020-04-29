@@ -4,4 +4,4 @@ Exec=nautilus ./Cloud
 Icon=/home/{{ username }}/Documents/Dock/Icons/cloud.png
 Terminal=false
 Type=Application
-Comment=Your cloud storage.
+Comment=Your cloud storage

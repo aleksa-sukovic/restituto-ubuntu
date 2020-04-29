@@ -4,12 +4,20 @@
     deb: https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb
 
 - name: Copy desktop file
-  copy:
+  template:
     src: desktop/dbeaver.desktop
     dest: "/home/{{ username }}/.local/share/applications/dbeaver.desktop"
     mode: 0755
     owner: "{{ username }}"
     group: "{{ username }}"
+
+- name: Copy icon
+  copy:
+    src: icons/dbeaver.png
+    dest: "/home/{{ username }}/Documents/Dock/Icons/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
 
 - name: Copy dock item
   template:

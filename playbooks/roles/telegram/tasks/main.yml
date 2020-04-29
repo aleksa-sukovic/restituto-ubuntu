@@ -12,7 +12,18 @@
     owner: "{{ username }}"
     group: "{{ group }}"
 
-- name: Initialize desktop file
+- name: Copy desktop file
+  template:
+    src: desktop/telegram.desktop
+    dest: "/home/{{ username }}/.local/share/applications/telegram-desktop_telegram-desktop.desktop"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Copy icon
   copy:
-    src: /var/lib/snapd/desktop/applications/telegram-desktop_telegramdesktop.desktop
-    dest: "/home/{{ username }}/.local/share/applications"
+    src: icons/telegram.png
+    dest: "/home/{{ username }}/Documents/Dock/Icons/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"

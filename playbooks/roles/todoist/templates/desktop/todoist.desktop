@@ -1,9 +1,9 @@
 [Desktop Entry]
-X-SnapInstanceName=todoist-thibaut
-Type=Application
 Name=Todoist
 Comment=Productivity tool you need to get work and life organized.
-Icon=/home/{{ username }}/Documents/Dock/Icons/todoist.png
-Categories=Productivity;
-Exec=env BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/todoist-thibaut_todoist.desktop /snap/bin/todoist-thibaut.todoist
+Exec="/opt/Todoist/todoist" %U
 Terminal=false
+Type=Application
+Icon=/home/{{ username }}/Documents/Dock/Icons/todoist.png
+StartupWMClass=Todoist
+Categories=Utility;Productivity;

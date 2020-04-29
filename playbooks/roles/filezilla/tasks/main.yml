@@ -1,0 +1,30 @@
+---
+- name: Install
+  apt:
+    name: filezilla
+    state: latest
+    update_cache: yes
+
+- name: Copy desktop file
+  template:
+    src: desktop/filezilla.desktop
+    dest: "/home/{{ username }}/.local/share/applications/filezilla.desktop"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ username }}"
+
+- name: Copy dock item
+  template:
+    src: dock/filezilla.dockitem
+    dest: "/home/{{ username }}/.config/plank/dock1/launchers/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ username }}"
+
+- name: Copy icon
+  copy:
+    src: icons/filezilla.png
+    dest: "/home/{{ username }}/Documents/Dock/Icons/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"

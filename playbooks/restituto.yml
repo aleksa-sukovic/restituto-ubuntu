@@ -11,7 +11,7 @@
         git_email: sukovic.aleksa@gmail.com
 
         # Calibre
-        calibre_library: /home/aleksa/pCloudDrive/Documents/Library
+        calibre_library: /home/aleksa/Cloud/Documents/Library
 
         # Node
         nvm_version: "v0.35.1"
@@ -35,7 +35,19 @@
         ]
 
         # Gnome
-        gnome_theme: mojave-light
+        gnome_default_theme: mojave-light
+        gnome_available_themes:
+          - themes/mojave-dark-alt.tar.xz
+          - themes/mojave-dark-solid-alt.tar.xz
+          - themes/mojave-dark-solid.tar.xz
+          - themes/mojave-dark.tar.xz
+          - themes/mojave-light-alt.tar.xz
+          - themes/mojave-light-solid-alt.tar.xz
+          - themes/mojave-light-solid.tar.xz
+          - themes/mojave-light.tar.xz
+          - themes/arc.tar.xz
+          - themes/arc-dark.tar.xz
+          - themes/arc-darker.tar.xz
         gnome_icons_theme: mojave-icons
         gnome_wallpaper: mojave-light.jpg
         gnome_lockscreen: lockscreen.jpg
@@ -43,9 +55,9 @@
           - 15    # alternate-tab
           - 779   # clipboard
           - 16    # auto-move windows
-          - 2     # frippery move clock
+          - 2     # flippery move clock
           - 1319  # gs connect
-          - 615   # kstatus notifier item
+          - 615   # k-status notifier item
           - 750   # open weather
           - 708   # panel osd
           - 7     # removable drive menu
@@ -73,7 +85,7 @@
         - blender
         - calibre
         - dbeaver
-        - file-zilla
+        - filezilla
         - station
         - docker
         - draw-io

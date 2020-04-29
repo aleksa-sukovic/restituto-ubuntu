@@ -17,10 +17,10 @@
     autoclean: yes
     autoremove: yes
 
-# - name: Update system
-#   apt:
-#     upgrade: full
+- name: Update system
+  apt:
+    upgrade: full
 
-# - name: Update cache
-#   apt:
-#     update_cache: true
+- name: Update cache
+  apt:
+    update_cache: true

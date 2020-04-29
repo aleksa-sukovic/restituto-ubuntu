@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Slack
+StartupWMClass=Slack
+Comment=Slack is where work flows
+GenericName=Slack for Linux
+Exec=/usr/bin/slack %U
+Icon=/home/{{ username }}/Documents/Dock/Icons/slack.png
+Type=Application
+StartupNotify=true
+Categories=GNOME;GTK;Network;InstantMessaging;
+MimeType=x-scheme-handler/slack;

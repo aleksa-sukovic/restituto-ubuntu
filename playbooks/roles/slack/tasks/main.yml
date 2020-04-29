@@ -3,11 +3,6 @@
   apt:
     deb: https://downloads.slack-edge.com/linux_releases/slack-desktop-4.2.0-amd64.deb
 
-- name: Initialize desktop file
-  copy:
-    src: /usr/share/applications/slack.desktop
-    dest: "/home/{{ username }}/.local/share/applications"
-
 - name: Copy dock item
   template:
     src: dock/slack.dockitem
@@ -16,8 +11,18 @@
     owner: "{{ username }}"
     group: "{{ group }}"
 
-- name: Add description to desktop file
-  replace:
-    path: "/home/{{ username }}/.local/share/applications/slack.desktop"
-    regexp: '^Comment=.*'
-    replace: "Comment=Slack is where work flows."
+- name: Copy desktop file
+  template:
+    src: desktop/slack.desktop
+    dest: "/home/{{ username }}/.local/share/applications/slack.desktop"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Copy icon
+  copy:
+    src: icons/slack.png
+    dest: "/home/{{ username }}/Documents/Dock/Icons/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"

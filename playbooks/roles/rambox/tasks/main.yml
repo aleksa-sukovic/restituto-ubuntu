@@ -1,0 +1,29 @@
+---
+- name: Install
+  snap:
+    name: ramboxapp
+    state: present
+
+- name: Copy icon
+  copy:
+    src: icons/rambox.png
+    dest: "/home/{{ username }}/Documents/Dock/Icons/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Copy desktop file
+  template:
+    src: desktop/rambox.desktop
+    dest: "/home/{{ username }}/.local/share/applications/rambox_rambox.desktop"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Copy dock item
+  template:
+    src: dock/rambox.dockitem
+    dest: "/home/{{ username }}/.config/plank/dock1/launchers/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ username }}"

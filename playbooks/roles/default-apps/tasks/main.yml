@@ -26,6 +26,7 @@
     - desktop/home.desktop
     - desktop/firefox.desktop
     - desktop/spacer.desktop
+    - desktop/trash.desktop
 
 - name: Default desktop icons
   copy:

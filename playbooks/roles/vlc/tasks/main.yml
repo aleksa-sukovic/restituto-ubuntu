@@ -28,7 +28,15 @@
 - name: Initialize desktop file
   template:
     src: desktop/vlc.desktop
-    dest: "/home/{{ username }}/.local/share/applications/"
+    dest: "/home/{{ username }}/.local/share/applications/vlc_vlc.desktop"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Copy dock item
+  template:
+    src: dock/vlc.dockitem
+    dest: "/home/{{ username }}/.config/plank/dock1/launchers/"
     mode: 0755
     owner: "{{ username }}"
     group: "{{ group }}"

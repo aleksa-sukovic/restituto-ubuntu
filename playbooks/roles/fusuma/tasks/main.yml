@@ -1,0 +1,35 @@
+---
+- name: Add user to input group
+  command: "gpasswd -a {{ username }} input"
+  become: true
+  become_user: root
+
+- name: Install dependencies
+  apt:
+    pkg:
+      - libinput-tools
+      - ruby
+      - fusuma
+
+- name: Configure GNOME
+  command: gsettings set org.gnome.desktop.peripherals.touchpad send-events enabled
+  become: true
+  become_user: "{{ username }}"
+
+- name: Initialize directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+  with_items:
+    - "/home/{{ username }}/.config/fusuma"
+
+- name: Add to autostart
+  template:
+    src: desktop/fusuma.desktop
+    dest: "/home/{{ username }}/.config/autostart"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"

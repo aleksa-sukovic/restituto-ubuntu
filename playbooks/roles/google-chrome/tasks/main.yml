@@ -14,6 +14,15 @@
     name: google-chrome-stable
     update_cache: yes
 
+- name: Fix apt source
+  lineinfile:
+    path: /etc/apt/sources.list.d/google-chrome.list
+    regexp: '^.*deb.*$'
+    line: "# deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
+    backrefs: yes
+  become: true
+  become_user: root
+
 - name: Copy desktop file
   copy:
     src: desktop/google-chrome.desktop

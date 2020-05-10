@@ -1,7 +1,7 @@
 ---
 - name: Install
   apt:
-    dep: https://github.com/KryDos/todoist-linux/releases/download/1.21/Todoist_1.21.0_amd64.deb
+    deb: https://github.com/KryDos/todoist-linux/releases/download/1.21/Todoist_1.21.0_amd64.deb
 
 - name: Copy desktop file
   template:

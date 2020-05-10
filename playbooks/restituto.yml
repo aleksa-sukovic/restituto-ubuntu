@@ -35,7 +35,7 @@
         ]
 
         # Gnome
-        gnome_default_theme: mojave-light
+        gnome_default_theme: Yaru
         gnome_available_themes:
           - themes/mojave-dark-alt.tar.xz
           - themes/mojave-dark-solid-alt.tar.xz
@@ -49,8 +49,8 @@
           - themes/arc-dark.tar.xz
           - themes/arc-darker.tar.xz
         gnome_icons_theme: mojave-icons
-        gnome_wallpaper: mojave-light.jpg
-        gnome_lockscreen: lockscreen.jpg
+        gnome_wallpaper: sunny-road.jpg
+        gnome_lockscreen: cliff-vision.jpg
         gnome_extensions:
           - 15    # alternate-tab
           - 779   # clipboard
@@ -75,15 +75,17 @@
         - git
         - nfs
         - node
+        - fusuma
         - flatpak
+        - dotfiles
         - zsh
-        - mysql
         - albert
         - android-studio
         - bitwarden
         - station
         - blender
         - calibre
+        - anki
         - dbeaver
         - filezilla
         - station
@@ -94,7 +96,7 @@
         - google-chrome
         - gravit-designer
         - intellij-community
-        - insync
+        - pcloud
         - php-storm
         - postman
         - qbittorrent
@@ -104,13 +106,11 @@
         - sublime
         - telegram
         - virtual-box
-        - vagrant
         - viber
         - visual-studio-code
         - vlc
         - pomodo
-        - vysor
-        - dotfiles
         - typora
+        - todoist
         - plank
         - gnome

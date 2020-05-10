@@ -3,7 +3,7 @@ X-SnapInstanceName=android-studio
 Version=1.0
 Type=Application
 Name=Android Studio
-Icon=/home/{{ username }}/Documents/Dock/Icons/android-studion.png
+Icon=/home/{{ username }}/Documents/Dock/Icons/android-studio.png
 Exec=env BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/android-studio_android-studio.desktop /snap/bin/android-studio %U
 Comment=Official IDE for Android
 Categories=Development;IDE;

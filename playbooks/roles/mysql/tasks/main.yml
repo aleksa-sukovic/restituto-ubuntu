@@ -2,16 +2,6 @@
 - shell: hostname
   register: current_hostname
 
-- name: Add PGP key for MySQL
-  apt_key:
-    keyserver: "{{ mysql_key_server }}"
-    id: "{{ mysql_key_id }}"
-
-- name: Add ppa Repository for MySQL
-  apt_repository:
-    repo: "{{ mysql_ppa }}"
-    state: present
-
 - name: Update apt
   apt: update_cache=yes
 

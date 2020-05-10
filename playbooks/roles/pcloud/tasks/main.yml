@@ -9,7 +9,7 @@
 
 - name: Download
   get_url:
-    url: "https://p-ams1.pcloud.com/cBZIr8IkbZxdvm9bZZZrWPNN7Z2ZZAs0ZkZUrA5VZiXZe7ZI7ZY0ZdJZB0ZzXZ7FZsJZO5ZhVZ20Z77ZUXZdgq8kZLJjdKHtl6Ay9h6o3bF2bMXxt3asy/pcloud"
+    url: "https://p-ams1.pcloud.com/cBZLReAUjZwFBktBZQFQIZZjIzEa7Z2ZZAcRZkZpOo5VZzFZtkZO0ZYXZ45Z37ZpVZY0Z3FZr5ZGFZh5ZVXZyVZ0lVdkZo8jvQzJ7JnhkMJ421M2dKHP0KaO7/pCloud.AppImage"
     dest: "/home/{{ username }}/Applications/pCloud.AppImage"
   become: true
   become_user: "{{ username }}"

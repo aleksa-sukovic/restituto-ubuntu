@@ -23,7 +23,7 @@
 
 - name: Copy icon
   copy:
-    src: icons/code.png
+    src: icons/visual-studio-code.png
     dest: "/home/{{ username }}/Documents/Dock/Icons/"
     mode: 0755
     owner: "{{ username }}"

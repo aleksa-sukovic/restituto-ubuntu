@@ -1,12 +1,13 @@
 ---
-- name: Download installation
-  apt:
-    deb: https://download.cdn.viber.com/cdn/desktop/Linux/viber.deb
+- name: Installing
+  snap:
+    name: viber-mtd
+    channel: latest/edge
 
 - name: Copy desktop file
   template:
     src: desktop/viber.desktop
-    dest: "/home/{{ username }}/.local/share/applications/"
+    dest: "/home/{{ username }}/.local/share/applications/viber-mtd_viber.desktop"
     mode: 0755
     owner: "{{ username }}"
     group: "{{ group }}"

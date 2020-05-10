@@ -1,0 +1,61 @@
+---
+- name: Download
+  get_url:
+    url: https://github.com/ankitects/anki/releases/download/2.1.26/anki-2.1.26-linux-amd64.tar.bz2
+    dest: "/home/{{ username }}/anki.tar.bz2"
+    mode: '0755'
+
+- name: Initialize directories
+  file:
+   path: "{{ item }}"
+   state: directory
+   mode: 0755
+   owner: "{{ username }}"
+   group: "{{ group }}"
+  with_items:
+   - "/home/{{ username }}/anki"
+
+- name: Extract
+  unarchive:
+    src: "/home/{{ username }}/anki.tar.bz2"
+    dest: "/home/{{ username }}/anki"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Install
+  shell: "cd /home/{{ username }}/anki/anki-2.1.26-linux-amd64 && make install"
+  become: true
+  become_user: root
+
+- name: Copy desktop file
+  template:
+    src: desktop/anki.desktop
+    dest: "/home/{{ username }}/.local/share/applications/anki.desktop"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Copy dock item
+  template:
+    src: dock/anki.dockitem
+    dest: "/home/{{ username }}/.config/plank/dock1/launchers/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Copy icon
+  copy:
+    src: icons/anki.png
+    dest: "/home/{{ username }}/Documents/Dock/Icons/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Clean
+  file:
+    path: "{{ item }}"
+    state: absent
+  with_items:
+    - "/home/{{ username }}/anki"
+    - "/home/{{ username }}/anki.tar.bz2"

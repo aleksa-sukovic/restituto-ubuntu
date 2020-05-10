@@ -1,9 +1,11 @@
 [Desktop Entry]
+X-SnapInstanceName=viber-mtd
 Name=Viber
 Comment=Viber VoIP and messenger
-Exec=/opt/viber/Viber %u
+Exec=env BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/viber-mtd_viber.desktop /snap/bin/viber-mtd.viber %U
 Icon=/home/{{ username }}/Documents/Dock/Icons/viber.png
 Terminal=false
 Type=Application
 Categories=Network;InstantMessaging;P2P;
 MimeType=x-scheme-handler/viber;
+

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Trash
+Exec=nautilus ./home/aleksa/.local/share/Trash/files
+Icon=/home/{{ username }}/Documents/Dock/Icons/trash.png
+Terminal=false
+Type=Application
+Comment=Your trash
+Name[en_US]=Trash

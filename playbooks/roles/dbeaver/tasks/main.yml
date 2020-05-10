@@ -26,3 +26,12 @@
     mode: 0755
     owner: "{{ username }}"
     group: "{{ username }}"
+
+- name: Extract themes
+  unarchive:
+    src: "{{ item }}"
+    dest: "/home/{{ username }}/.local/share/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+  with_items: "config/dbeaver-config.zip"

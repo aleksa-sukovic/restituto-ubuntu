@@ -1,0 +1,14 @@
+[Desktop Entry]
+X-SnapInstanceName=mailspring
+Name=Mail
+Comment=The best email app for people and teams at work
+GenericName=Mail Client
+Exec=env BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/mailspring_mailspring.desktop /snap/bin/mailspring %U
+Icon=/home/{{ username }}/Documents/Dock/Icons/mailspring.png
+Type=Application
+StartupNotify=true
+StartupWMClass=Mailspring
+Categories=GNOME;GTK;Network;Email;
+Keywords=email;internet;
+MimeType=x-scheme-handler/mailto;x-scheme-handler/mailspring;
+

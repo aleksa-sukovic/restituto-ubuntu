@@ -1,7 +1,7 @@
 ---
 - name: Install
   snap:
-    name: postman
+    name: mailspring
     state: present
 
 - name: Copy dock item
@@ -14,7 +14,7 @@
 
 - name: Copy icon
   copy:
-    src: icons/postman.png
+    src: icons/mailspring.png
     dest: "/home/{{ username }}/Documents/Dock/Icons/"
     mode: 0755
     owner: "{{ username }}"
@@ -22,8 +22,8 @@
 
 - name: Initialize desktop file
   template:
-    src: desktop/postman.desktop
-    dest: "/home/{{ username }}/.local/share/applications/postman_postman.desktop"
+    src: desktop/mailspring.desktop
+    dest: "/home/{{ username }}/.local/share/applications/mailspring_mailspring.desktop"
     mode: 0755
     owner: "{{ username }}"
     group: "{{ group }}"

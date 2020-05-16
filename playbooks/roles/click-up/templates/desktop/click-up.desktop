@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=ClickUp
+Comment=All your work in one place: Tasks, docs, chat, goals, & more
+Exec="/home/{{ username }}/Applications/clickUp.AppImage" %U
+Terminal=false
+Type=Application
+Icon=/home/{{ username }}/Documents/Dock/Icons/click-up.png
+StartupWMClass="clickup desktop", "ClickUp Desktop"
+X-AppImage-Version=1.8.0
+Categories=Network;
+X-AppImage-BuildId=1ZtL9sNKRG3MJgivps3ENhQ2Yn3
+X-Desktop-File-Install-Version=0.23
+TryExec=/home/{{ username }}/Applications/clickUp.AppImage

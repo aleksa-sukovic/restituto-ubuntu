@@ -1,0 +1,44 @@
+---
+- name: Create 'Applications' directory if it does not exist
+  file:
+    path: "/home/{{ username }}/Applications"
+    state: directory
+    mode: '0755'
+  become: true
+  become_user: "{{ username }}"
+
+- name: Download
+  get_url:
+    url: "http://clickup.com/ClickUp_Linux.zip"
+    dest: "/home/{{ username }}/Applications/clickUp.AppImage"
+  become: true
+  become_user: "{{ username }}"
+
+- name: Make executable
+  file:
+    dest: "/home/{{ username }}/Applications/clickUp.AppImage"
+    mode: a+x
+
+- name: Copy desktop file
+  template:
+    src: desktop/click-up.desktop
+    dest: "/home/{{ username }}/.local/share/applications/click-up.desktop"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Copy dock item
+  template:
+    src: dock/click-up.dockitem
+    dest: "/home/{{ username }}/.config/plank/dock1/launchers/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"
+
+- name: Copy icon
+  copy:
+    src: icons/click-up.png
+    dest: "/home/{{ username }}/Documents/Dock/Icons/"
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ group }}"

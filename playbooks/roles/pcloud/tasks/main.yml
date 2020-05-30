@@ -9,7 +9,7 @@
 
 - name: Download
   get_url:
-    url: "https://p-ams1.pcloud.com/cBZLReAUjZwFBktBZQFQIZZjIzEa7Z2ZZAcRZkZpOo5VZzFZtkZO0ZYXZ45Z37ZpVZY0Z3FZr5ZGFZh5ZVXZyVZ0lVdkZo8jvQzJ7JnhkMJ421M2dKHP0KaO7/pCloud.AppImage"
+    url: "https://file.io/BNIMZJeY"
     dest: "/home/{{ username }}/Applications/pCloud.AppImage"
   become: true
   become_user: "{{ username }}"

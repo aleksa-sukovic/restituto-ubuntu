@@ -3,6 +3,7 @@
   snap:
     name: gitkraken
     state: present
+    classic: yes
 
 - name: Copy icon
   copy:

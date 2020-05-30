@@ -52,7 +52,6 @@
         gnome_wallpaper: sunny-road.jpg
         gnome_lockscreen: cliff-vision.jpg
         gnome_extensions:
-          - 15    # alternate-tab
           - 779   # clipboard
           - 16    # auto-move windows
           - 2     # flippery move clock
@@ -74,11 +73,11 @@
         - mkcert
         - git
         - nfs
+        - zsh
         - node
         - fusuma
         - flatpak
         - dotfiles
-        - zsh
         - insync
         - albert
         - android-studio
@@ -112,7 +111,6 @@
         - telegram
         - virtual-box
         - viber
-        - rambox
         - vagrant
         - visual-studio-code
         - vlc

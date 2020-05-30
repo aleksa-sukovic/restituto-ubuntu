@@ -6,7 +6,7 @@
 
 - name: Copy dock item
   template:
-    src: dock/postman.dockitem
+    src: dock/mailspring.dockitem
     dest: "/home/{{ username }}/.config/plank/dock1/launchers/"
     mode: 0755
     owner: "{{ username }}"

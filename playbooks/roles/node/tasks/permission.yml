@@ -4,7 +4,7 @@
   file:
     path: "{{ nvm_dest }}"
     group: "{{ username }}"
-    owner: "{{ username }}"
+    owner: "{{ group }}"
     mode: 0755
     recurse: yes
     state: directory
